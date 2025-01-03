@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",  // Set the JavaScript version output
+    "module": "commonjs", // Jest requires commonjs modules
+    "jsx": "react", // Enables JSX syntax support
+    "strict": true, // Enables strict type checking options
+    "esModuleInterop": true, // Enables interoperability between commonjs and esmodules
+    "skipLibCheck": true, // Skip type checking of declaration files (useful for large projects)
+    "moduleResolution": "node", // Resolves modules like Node.js
+    "noEmit": true, // Don't output any files, we just want to type check
+    "isolatedModules": true, // Ensures each file can be transpiled independently
+    //"types": ["jest"] // Add Jest types for the global test functions (describe, it, expect, etc.)
+  },
+  "include": [
+    "src/components/**/*.tsx", // Include all the TypeScript source files
+    "src/tests/**/*.tsx" // Include test files with .test.tsx extension
+  ],
+  "exclude": [
+    "node_modules" // Exclude node_modules folder from compilation
+  ]
+}

@@ -1,0 +1,47 @@
+#Github Workflow - YAML GitHub Workflow (github-workflow.json)
+name: React CI
+
+on:
+  push:
+    branches: [main, master, feature/tests] #every time we do a push to our main or master, we are going to run our jobs
+
+jobs:
+  build:
+    runs-on: ubuntu-latest #sets up an ubuntu environment
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+
+      - name: use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Print debugging information
+        run: |
+          echo "Node Version: $(node -v)"
+          echo "NPM Version: $(npm --version)"
+          echo "Working Directory: $(pwd)"
+          echo "Contents of Working Directory: $(ls -1)"
+          echo "Contents of node_modules: $(ls -1 node_modules)"
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check out code
+        uses: actions/checkout@v2
+
+      - name: use Node-js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm test

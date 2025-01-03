@@ -1,3 +1,5 @@
+**Some dependencies and installs have been depreciated and efforts to resolve these small errors haven been made. Some errors persist because of installs not being maintained.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
